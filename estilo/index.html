@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdi & Associados - Advocacia Especializada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Paleta Moderna & Sofisticada */
+            --cinza-claro: #f8f9fa;
+            --cinza-medio: #e9ecef;
+            --cinza-escuro: #495057;
+            --cinza-charcoal: #343a40;
+            --azul-petroleo: #006d77;
+            --azul-petroleo-claro: #83c5be;
+            --verde-sage: #8a9a5b;
+            --branco: #ffffff;
+            --destaque-dourado: #d4af37;
+            
+            /* Tipografia */
+            --fonte-titulo: 'Georgia', serif;
+            --fonte-texto: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--fonte-texto);
+            color: var(--cinza-charcoal);
+            line-height: 1.6;
+            background-color: var(--cinza-claro);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primario {
+            background-color: var(--azul-petroleo);
+            color: var(--branco);
+        }
+        
+        .btn-primario:hover {
+            background-color: #00545c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secundario {
+            background-color: transparent;
+            color: var(--azul-petroleo);
+            border: 2px solid var(--azul-petroleo);
+        }
+        
+        .btn-secundario:hover {
+            background-color: rgba(0, 109, 119, 0.05);
+        }
+        
+        /* HEADER */
+        header {
+            background-color: var(--branco);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--azul-petroleo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-size: 1.5rem;
+        }
+        
+        .logo-text {
+            font-family: var(--fonte-titulo);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cinza-charcoal);
+        }
+        
+        .logo-text span {
+            color: var(--azul-petroleo);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            font-weight: 600;
+            color: var(--cinza-charcoal);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--azul-petroleo);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--azul-petroleo);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .header-contato {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--azul-petroleo);
+            font-weight: 600;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--cinza-charcoal);
+            cursor: pointer;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(52, 58, 64, 0.85), rgba(52, 58, 64, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            padding: 100px 0;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* SERVIÇOS */
+        .servicos {
+            padding: 100px 0;
+            background-color: var(--branco);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.5rem;
+            color: var(--cinza-charcoal);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--azul-petroleo);
+        }
+        
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .servico-card {
+            background-color: var(--cinza-claro);
+            border-radius: 8px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--azul-petroleo);
+        }
+        
+        .servico-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .servico-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--azul-petroleo-claro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--azul-petroleo);
+            font-size: 1.8rem;
+        }
+        
+        .servico-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--cinza-charcoal);
+        }
+        
+        /* SOBRE */
+        .sobre {
+            padding: 100px 0;
+            background-color: var(--cinza-medio);
+        }
+        
+        .sobre-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .sobre-imagem {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sobre-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .sobre-imagem:hover img {
+            transform: scale(1.03);
+        }
+        
+        .sobre-conteudo {
+            flex: 1;
+        }
+        
+        .sobre-conteudo h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.5rem;
+            color: var(--cinza-charcoal);
+            margin-bottom: 20px;
+        }
+        
+        .sobre-conteudo p {
+            margin-bottom: 20px;
+            color: var(--cinza-escuro);
+        }
+        
+        .destaque-box {
+            background-color: var(--branco);
+            border-left: 4px solid var(--verde-sage);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--cinza-charcoal);
+            color: var(--cinza-medio);
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            color: var(--branco);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--azul-petroleo);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            transition: all 0.3s ease;
+            color: var(--cinza-medio);
+        }
+        
+        .footer-links a:hover {
+            color: var(--azul-petroleo-claro);
+            padding-left: 5px;
+        }
+        
+        .contato-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contato-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .contato-icon {
+            color: var(--azul-petroleo);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--azul-petroleo);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--cinza-medio);
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .sobre-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .header-contato span {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .servicos, .sobre {
+                padding: 70px 0;
+            }
+            
+            .section-title h2, .sobre-conteudo h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="logo-text">Verdi & <span>Associados</span></div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#equipe">Equipe</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-contato">
+                <i class="fas fa-phone"></i>
+                <span>(11) 9999-8888</span>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Excelência Jurídica com Sofisticação e Resultados</h1>
+                <p>Há mais de 25 anos oferecendo soluções jurídicas personalizadas e estratégicas para pessoas e empresas, com o mais alto padrão de qualidade e confidencialidade.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primario">Agendar Consulta</a>
+                    <a href="#servicos" class="btn btn-secundario">Nossos Serviços</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Áreas de Atuação</h2>
+            </div>
+            
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Direito Empresarial</h3>
+                    <p>Assessoria completa para empresas, desde constituição até fusões e aquisições, com foco em prevenção de litígios.</p>
+                </div>
+                
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Direito Imobiliário</h3>
+                    <p>Consultoria em transações imobiliárias, due diligence, contratos de compra e venda, regularização e usucapião.</p>
+                </div>
+                
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Direito de Família</h3>
+                    <p>Atuação sensível e estratégica em divórcios, guarda de filhos, partilha de bens e planejamento sucessório.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="sobre-container">
+                <div class="sobre-imagem">
+                    <img src="https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Escritório Verdi & Associados">
+                </div>
+                
+                <div class="sobre-conteudo">
+                    <h2>Uma tradição de excelência jurídica</h2>
+                    <p>Fundado em 1998, o escritório Verdi & Associados se estabeleceu como referência no mercado jurídico, unindo a tradição do direito à inovação nas soluções oferecidas.</p>
+                    <p>Nossa equipe multidisciplinar é composta por especialistas com vasta experiência e formação nas melhores instituições de ensino do país e do exterior.</p>
+                    
+                    <div class="destaque-box">
+                        <p><strong>Missão:</strong> Oferecer soluções jurídicas personalizadas, éticas e eficientes, sempre pautadas pela excelência técnica e pelo compromisso com os interesses de nossos clientes.</p>
+                    </div>
+                    
+                    <a href="#equipe" class="btn btn-primario" style="margin-top: 20px;">Conheça Nossa Equipe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Verdi & Associados</h3>
+                    <p>Excelência jurídica com sofisticação e resultados concretos há mais de duas décadas.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#equipe">Equipe</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <div class="contato-info">
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p>Av. Paulista, 1000 - 10º andar<br>Bela Vista, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p>(11) 9999-8888<br>(11) 9999-7777</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contato-item">
+                            <div class="contato-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p>contato@verdiassociados.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Verdi & Associados - Todos os direitos reservados. OAB/SP 123.456</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile simples
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // Fechar menu ao clicar em um link (em mobile)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('nav').style.display = 'none';
+                }
+            });
+        });
+        
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
