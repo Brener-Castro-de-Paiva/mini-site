@@ -46,7 +46,7 @@ body{
 a.externo:after{
     content: '\00A0\1F517';
 
-}
+}    
 
 main p{
     margin: 15px  0px;
@@ -64,6 +64,7 @@ header{
 header > h1{
     color: white;
     font-family: var(--fonte-destaque);
+    font-weight: normal;
     padding-bottom: 20px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.33);
@@ -93,7 +94,7 @@ nav{
 }
 
 nav > a{
-    color: white;
+    color: var(--cor1);
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
@@ -131,13 +132,35 @@ main img.pequena{
     display: block;
 }
 
+div.video{
+    background-color: var(--cor5);
+    margin-bottom: 5px;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative;
+}
+
+div.video > iframe{
+    position:absolute;
+    top:5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+
+}
+
 main h1 {
     color: #83e1ad;
     font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
 }
 
 main h2{
     font-family: var(--fonte-android);
+    font-weight: normal;
     color: var(--cor4);
     font-size: 1.3em;
     background-image:linear-gradient(to right, var(--cor1), transparent);
